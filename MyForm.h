@@ -59,21 +59,21 @@ namespace StudentManagementSplayTree {
 
             StudentSplayTree() { Root = nullptr; }
 
-            // Splay operation
+            // splay operation
             SplayNode^ Splay(SplayNode^ root, int id) {
                 if (root == nullptr || root->Info->StudentId == id)
                     return root;
 
-                // If ID is in the left subtree
+                // if id at left
                 if (id < root->Info->StudentId) {
                     if (root->Left == nullptr) return root;
 
-                    // Zig-Zig (Left Left)
+                    // Zig-Zig (Left Left) left subtree of the left child
                     if (id < root->Left->Info->StudentId) {
                         root->Left->Left = Splay(root->Left->Left, id);
                         root = RotateRight(root);
                     }
-                    // Zig-Zag (Left Right)
+                    // Zig-Zag (Left Right) right subtree of the left child
                     else if (id > root->Left->Info->StudentId) {
                         root->Left->Right = Splay(root->Left->Right, id);
                         if (root->Left->Right != nullptr)
@@ -83,16 +83,16 @@ namespace StudentManagementSplayTree {
                     return (root->Left == nullptr) ? root : RotateRight(root);
                 }
                 else {
-                    // If ID is in the right subtree
+                    // id at right
                     if (root->Right == nullptr) return root;
 
-                    // Zag-Zig (Right Left)
+                    // Zag-Zig (Right Left) left subtree of the right child
                     if (id < root->Right->Info->StudentId) {
                         root->Right->Left = Splay(root->Right->Left, id);
                         if (root->Right->Left != nullptr)
                             root->Right = RotateRight(root->Right);
                     }
-                    // Zag-Zag (Right Right)
+                    // Zag-Zag (Right Right) right subtree of the right child
                     else if (id > root->Right->Info->StudentId) {
                         root->Right->Right = Splay(root->Right->Right, id);
                         root = RotateLeft(root);
@@ -102,7 +102,7 @@ namespace StudentManagementSplayTree {
                 }
             }
 
-            // Rotate right
+            // rotate right
             SplayNode^ RotateRight(SplayNode^ node) {
                 SplayNode^ temp = node->Left;
                 node->Left = temp->Right;
@@ -110,7 +110,7 @@ namespace StudentManagementSplayTree {
                 return temp;
             }
 
-            // Rotate left
+            // rotate left
             SplayNode^ RotateLeft(SplayNode^ node) {
                 SplayNode^ temp = node->Right;
                 node->Right = temp->Left;
@@ -118,7 +118,7 @@ namespace StudentManagementSplayTree {
                 return temp;
             }
 
-            // Insert a new node
+            // insert a new node
             void Insert(StudentInfo^ Info) {
                 if (Root == nullptr) {
                     Root = gcnew SplayNode(Info);
@@ -154,14 +154,14 @@ namespace StudentManagementSplayTree {
                 return nullptr;
             }
 
-            // Delete a node
+            // delete node
             void Delete(int id) {
                 if (Root == nullptr) return;
 
                 Root = Splay(Root, id);
 
                 if (Root->Info->StudentId != id)
-                    return; // Info not found
+                    return; //id not found
 
                 if (Root->Left == nullptr) {
                     Root = Root->Right;
@@ -174,7 +174,7 @@ namespace StudentManagementSplayTree {
                 }
             }
 
-            // In-order traversal
+            // display in order
             void InOrderTraversal(SplayNode^ node, System::Collections::Generic::List<StudentInfo^>^% Infos) {
                 if (node != nullptr) {
                     InOrderTraversal(node->Left, Infos);
@@ -200,15 +200,17 @@ namespace StudentManagementSplayTree {
         System::Windows::Forms::Button^ searchAllButton;
         System::Windows::Forms::TextBox^ inputTextBox;
         System::Windows::Forms::DataGridView^ studentGridView;
-
         System::ComponentModel::Container^ components;
+        System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+        System::Windows::Forms::DataGridViewButtonColumn^ Action;
+        System::Windows::Forms::Label^ label1;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-        System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
-        System::Windows::Forms::DataGridViewButtonColumn^ Action;
+        System::Windows::Forms::DataGridViewTextBoxColumn^ Year;
+        System::Windows::Forms::DataGridViewButtonColumn^ Update;
         System::Windows::Forms::DataGridViewButtonColumn^ Delete;
-        System::Windows::Forms::Label^ label1;
+
 
         // Local inventory data (BST)
         StudentSplayTree^ studentSplayTree = gcnew StudentSplayTree();
@@ -221,12 +223,14 @@ namespace StudentManagementSplayTree {
             this->searchAllButton = (gcnew System::Windows::Forms::Button());
             this->inputTextBox = (gcnew System::Windows::Forms::TextBox());
             this->studentGridView = (gcnew System::Windows::Forms::DataGridView());
+            this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->label1 = (gcnew System::Windows::Forms::Label());
             this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Action = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+            this->Year = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->Update = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
             this->Delete = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
-            this->label1 = (gcnew System::Windows::Forms::Label());
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->studentGridView))->BeginInit();
             this->SuspendLayout();
             // 
@@ -250,15 +254,33 @@ namespace StudentManagementSplayTree {
             // studentGridView
             // 
             this->studentGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->studentGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-                this->dataGridViewTextBoxColumn1,
-                    this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->Action, this->Delete
+            this->studentGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+            this->dataGridViewTextBoxColumn1,
+            this->dataGridViewTextBoxColumn2, 
+            this->dataGridViewTextBoxColumn3, 
+            this->Year, 
+            this->Update, 
+            this->Delete
             });
             this->studentGridView->Location = System::Drawing::Point(20, 70);
             this->studentGridView->Name = L"studentGridView";
             this->studentGridView->Size = System::Drawing::Size(800, 500);
             this->studentGridView->TabIndex = 2;
             this->studentGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::studentGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this->dataGridViewTextBoxColumn4->HeaderText = L"Year";
+            this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+            // 
+            // label1
+            // 
+            this->label1->AutoSize = true;
+            this->label1->Location = System::Drawing::Point(126, 29);
+            this->label1->Name = L"label1";
+            this->label1->Size = System::Drawing::Size(56, 13);
+            this->label1->TabIndex = 3;
+            this->label1->Text = L"Student Id";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -276,17 +298,17 @@ namespace StudentManagementSplayTree {
             this->dataGridViewTextBoxColumn3->HeaderText = L"Course";
             this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn3
+            // Year
             // 
-            this->dataGridViewTextBoxColumn4->HeaderText = L"Year";
-            this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn3";
+            this->Year->HeaderText = L"Year";
+            this->Year->Name = L"Year";
             // 
-            // Action
+            // Update
             // 
-            this->Action->HeaderText = L"Update";
-            this->Action->Name = L"Action";
-            this->Action->Text = L"Update";
-            this->Action->ToolTipText = L"Update";
+            this->Update->HeaderText = L"Update";
+            this->Update->Name = L"Update";
+            this->Update->Text = L"Update";
+            this->Update->ToolTipText = L"Update";
             // 
             // Delete
             // 
@@ -294,15 +316,6 @@ namespace StudentManagementSplayTree {
             this->Delete->Name = L"Delete";
             this->Delete->Text = L"Delete";
             this->Delete->ToolTipText = L"Delete";
-            // 
-            // label1
-            // 
-            this->label1->AutoSize = true;
-            this->label1->Location = System::Drawing::Point(126, 29);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(63, 13);
-            this->label1->TabIndex = 3;
-            this->label1->Text = L"Student Id";
             // 
             // MyForm
             // 
@@ -327,7 +340,7 @@ namespace StudentManagementSplayTree {
         // Load data from JSON file into BST
         void LoadDataFromJson()
         {
-            std::ifstream file("student.json");
+            std::ifstream file("student_data.json");
             if (!file.is_open())
             {
                 MessageBox::Show("Unable to open JSON file.");
@@ -339,9 +352,9 @@ namespace StudentManagementSplayTree {
 
             for (const auto& Info : jsonData)
             {
-                int id = Info["StudentId"];
-                String^ name = gcnew String(Info["Description"].get<std::string>().c_str());
-                String^ course = gcnew String(Info["Course"].get<std::string>().c_str());
+                int id = Info["studentId"];
+                String^ name = gcnew String(Info["name"].get<std::string>().c_str());
+                String^ course = gcnew String(Info["course"].get<std::string>().c_str());
                 int year = Info["year"];
 
                 StudentInfo^ newInfo = gcnew StudentInfo(id, name, course, year);
@@ -420,7 +433,7 @@ namespace StudentManagementSplayTree {
             {
                 switch (e->ColumnIndex)
                 {
-                case 3: // Update button column
+                case 4: // Update button column
                 {
                     int StudentId = Convert::ToInt32(this->studentGridView->Rows[e->RowIndex]->Cells[0]->Value);
                     String^ name = this->studentGridView->Rows[e->RowIndex]->Cells[1]->Value->ToString();
@@ -431,7 +444,7 @@ namespace StudentManagementSplayTree {
                     UpdateStudentData(StudentId, name, course, year);
                     break;
                 }
-                case 4: // Delete button column
+                case 5: // Delete button column
                 {
                     int StudentId = Convert::ToInt32(this->studentGridView->Rows[e->RowIndex]->Cells[0]->Value);
                     DeleteStudentData(StudentId);
@@ -447,21 +460,17 @@ namespace StudentManagementSplayTree {
             // Check if StudentId is 0, in which case we perform an insert
             if (StudentId == 0)
             {
-                // Generate a new StudentId as maxStudentId + 1
                 // Random number generation
                 std::random_device rd;
                 std::mt19937 gen(rd());
                 std::uniform_int_distribution<> distrib(1000000, 9999999); // 7-digit range
-
-                // Generate a random number
-                int randomNumber = distrib(gen);
+                int randomNumber = distrib(gen); //rand no
                 StudentId = randomNumber;
 
-                // Create a new StudentInfo with the new StudentId
                 StudentInfo^ newInfo = gcnew StudentInfo(StudentId, name, course, year);
 
                 System::Diagnostics::Stopwatch^ stopwatch = System::Diagnostics::Stopwatch::StartNew();
-                // Insert the new Info into the BST
+                // insert to splay tree
                 studentSplayTree->Insert(newInfo);
 
                 stopwatch->Stop();
@@ -505,7 +514,7 @@ namespace StudentManagementSplayTree {
             stopwatch->Stop();
             String^ elapsedTime = String::Format("Delete Operation completed in {0} ticks (1 milliseconds = 1000 ticks).", stopwatch->ElapsedTicks);
 
-            MessageBox::Show("Student (id: " + StudentId + ") deleted successfully!");
+            MessageBox::Show("Student (id: " + StudentId + ") deleted successfully!" + elapsedTime);
             PopulateGridView();
         }
 #pragma endregion

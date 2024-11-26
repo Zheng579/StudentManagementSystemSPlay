@@ -4,10 +4,9 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThreadAttribute]
 
-void main(array<String^>^ args) {
-	Application::SetCompatibleTextRenderingDefault(false);
-	Application::EnableVisualStyles();
-	StudentManagementSystemSPlay::MyForm frm;
-	Application::Run(% frm);
-
+int main(array<String^>^ args) {
+    Application::EnableVisualStyles();
+    Application::SetCompatibleTextRenderingDefault(false);
+    StudentManagementSplayTree::MyForm mainForm;
+    Application::Run(% mainForm);
 }
