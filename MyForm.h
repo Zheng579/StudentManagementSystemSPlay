@@ -204,15 +204,20 @@ namespace StudentManagementSplayTree {
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
         System::Windows::Forms::DataGridViewButtonColumn^ Action;
         System::Windows::Forms::Label^ label1;
-        System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
-        System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
-        System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-        System::Windows::Forms::DataGridViewTextBoxColumn^ Year;
-        System::Windows::Forms::DataGridViewButtonColumn^ Update;
-        System::Windows::Forms::DataGridViewButtonColumn^ Delete;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Year;
+private: System::Windows::Forms::DataGridViewButtonColumn^ Update;
+private: System::Windows::Forms::DataGridViewButtonColumn^ Delete;
 
 
-        // Local inventory data (BST)
+
+
+
+
+
+        // Local inventory data (Splay)
         StudentSplayTree^ studentSplayTree = gcnew StudentSplayTree();
 #pragma endregion
 
@@ -220,6 +225,8 @@ namespace StudentManagementSplayTree {
     public:
         void InitializeComponent(void)
         {
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
             this->searchAllButton = (gcnew System::Windows::Forms::Button());
             this->inputTextBox = (gcnew System::Windows::Forms::TextBox());
             this->studentGridView = (gcnew System::Windows::Forms::DataGridView());
@@ -255,12 +262,8 @@ namespace StudentManagementSplayTree {
             // 
             this->studentGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
             this->studentGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
-            this->dataGridViewTextBoxColumn1,
-            this->dataGridViewTextBoxColumn2, 
-            this->dataGridViewTextBoxColumn3, 
-            this->Year, 
-            this->Update, 
-            this->Delete
+                this->dataGridViewTextBoxColumn1,
+                    this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->Year, this->Update, this->Delete
             });
             this->studentGridView->Location = System::Drawing::Point(20, 70);
             this->studentGridView->Name = L"studentGridView";
@@ -286,7 +289,6 @@ namespace StudentManagementSplayTree {
             // 
             this->dataGridViewTextBoxColumn1->HeaderText = L"Student Id";
             this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-            this->dataGridViewTextBoxColumn1->ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -305,6 +307,9 @@ namespace StudentManagementSplayTree {
             // 
             // Update
             // 
+            dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+            dataGridViewCellStyle1->NullValue = L"Update";
+            this->Update->DefaultCellStyle = dataGridViewCellStyle1;
             this->Update->HeaderText = L"Update";
             this->Update->Name = L"Update";
             this->Update->Text = L"Update";
@@ -312,6 +317,9 @@ namespace StudentManagementSplayTree {
             // 
             // Delete
             // 
+            dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+            dataGridViewCellStyle2->NullValue = L"Delete";
+            this->Delete->DefaultCellStyle = dataGridViewCellStyle2;
             this->Delete->HeaderText = L"Delete";
             this->Delete->Name = L"Delete";
             this->Delete->Text = L"Delete";
@@ -340,7 +348,7 @@ namespace StudentManagementSplayTree {
         // Load data from JSON file into BST
         void LoadDataFromJson()
         {
-            std::ifstream file("student_data.json");
+            std::ifstream file("student_data10000.json");
             if (!file.is_open())
             {
                 MessageBox::Show("Unable to open JSON file.");
@@ -457,15 +465,17 @@ namespace StudentManagementSplayTree {
         // Update Student data in the BST
         void UpdateStudentData(int StudentId, String^ name, String^ course, int year)
         {
+            //check if is existing studentId
+            StudentInfo^ Info = studentSplayTree->Search(StudentId);
             // Check if StudentId is 0, in which case we perform an insert
-            if (StudentId == 0)
+            if (Info == nullptr)
             {
                 // Random number generation
-                std::random_device rd;
-                std::mt19937 gen(rd());
-                std::uniform_int_distribution<> distrib(1000000, 9999999); // 7-digit range
-                int randomNumber = distrib(gen); //rand no
-                StudentId = randomNumber;
+                //std::random_device rd;
+                //std::mt19937 gen(rd());
+                //std::uniform_int_distribution<> distrib(1000000, 9999999); // 7-digit range
+                //int randomNumber = distrib(gen); //rand no
+                //StudentId = randomNumber;
 
                 StudentInfo^ newInfo = gcnew StudentInfo(StudentId, name, course, year);
 

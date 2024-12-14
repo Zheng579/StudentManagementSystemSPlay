@@ -1,0 +1,602 @@
+[
+    {
+        "studentId": 6488366,
+        "name": "student 6488366",
+        "course": "MECS1033",
+        "year": 2015
+    },
+    {
+        "studentId": 9623642,
+        "name": "student 9623642",
+        "course": "MECS1025",
+        "year": 2024
+    },
+    {
+        "studentId": 2142106,
+        "name": "student 2142106",
+        "course": "MECS1032",
+        "year": 2015
+    },
+    {
+        "studentId": 1133998,
+        "name": "student 1133998",
+        "course": "MECS1028",
+        "year": 2016
+    },
+    {
+        "studentId": 1362956,
+        "name": "student 1362956",
+        "course": "MECS1028",
+        "year": 2024
+    },
+    {
+        "studentId": 3780529,
+        "name": "student 3780529",
+        "course": "MECS1033",
+        "year": 2019
+    },
+    {
+        "studentId": 1775749,
+        "name": "student 1775749",
+        "course": "MECS1029",
+        "year": 2015
+    },
+    {
+        "studentId": 3113976,
+        "name": "student 3113976",
+        "course": "MECS1025",
+        "year": 2016
+    },
+    {
+        "studentId": 1402075,
+        "name": "student 1402075",
+        "course": "MECS1030",
+        "year": 2019
+    },
+    {
+        "studentId": 1700275,
+        "name": "student 1700275",
+        "course": "MECS1029",
+        "year": 2017
+    },
+    {
+        "studentId": 8659501,
+        "name": "student 8659501",
+        "course": "MECS1025",
+        "year": 2020
+    },
+    {
+        "studentId": 3980152,
+        "name": "student 3980152",
+        "course": "MECS1030",
+        "year": 2016
+    },
+    {
+        "studentId": 9349039,
+        "name": "student 9349039",
+        "course": "MECS1033",
+        "year": 2021
+    },
+    {
+        "studentId": 3679063,
+        "name": "student 3679063",
+        "course": "MECS1030",
+        "year": 2018
+    },
+    {
+        "studentId": 8190402,
+        "name": "student 8190402",
+        "course": "MECS1025",
+        "year": 2023
+    },
+    {
+        "studentId": 7949281,
+        "name": "student 7949281",
+        "course": "MECS1029",
+        "year": 2017
+    },
+    {
+        "studentId": 6897821,
+        "name": "student 6897821",
+        "course": "MECS1030",
+        "year": 2023
+    },
+    {
+        "studentId": 7995501,
+        "name": "student 7995501",
+        "course": "MECS1028",
+        "year": 2021
+    },
+    {
+        "studentId": 2232776,
+        "name": "student 2232776",
+        "course": "MECS1033",
+        "year": 2022
+    },
+    {
+        "studentId": 6772010,
+        "name": "student 6772010",
+        "course": "MECS1026",
+        "year": 2015
+    },
+    {
+        "studentId": 9098977,
+        "name": "student 9098977",
+        "course": "MECS1033",
+        "year": 2024
+    },
+    {
+        "studentId": 2250898,
+        "name": "student 2250898",
+        "course": "MECS1032",
+        "year": 2024
+    },
+    {
+        "studentId": 4796868,
+        "name": "student 4796868",
+        "course": "MECS1030",
+        "year": 2020
+    },
+    {
+        "studentId": 4194122,
+        "name": "student 4194122",
+        "course": "MECS1028",
+        "year": 2015
+    },
+    {
+        "studentId": 9014349,
+        "name": "student 9014349",
+        "course": "MECS1033",
+        "year": 2020
+    },
+    {
+        "studentId": 3814294,
+        "name": "student 3814294",
+        "course": "MECS1024 ",
+        "year": 2019
+    },
+    {
+        "studentId": 3998432,
+        "name": "student 3998432",
+        "course": "MECS1029",
+        "year": 2019
+    },
+    {
+        "studentId": 1266706,
+        "name": "student 1266706",
+        "course": "MECS1023",
+        "year": 2018
+    },
+    {
+        "studentId": 6483972,
+        "name": "student 6483972",
+        "course": "MECS1033",
+        "year": 2021
+    },
+    {
+        "studentId": 1295670,
+        "name": "student 1295670",
+        "course": "MECS1028",
+        "year": 2018
+    },
+    {
+        "studentId": 2317763,
+        "name": "student 2317763",
+        "course": "MECS1032",
+        "year": 2024
+    },
+    {
+        "studentId": 6952647,
+        "name": "student 6952647",
+        "course": "MECS1032",
+        "year": 2018
+    },
+    {
+        "studentId": 5282943,
+        "name": "student 5282943",
+        "course": "MECS1024 ",
+        "year": 2016
+    },
+    {
+        "studentId": 7816259,
+        "name": "student 7816259",
+        "course": "MECS1023",
+        "year": 2024
+    },
+    {
+        "studentId": 2452658,
+        "name": "student 2452658",
+        "course": "MECS1029",
+        "year": 2024
+    },
+    {
+        "studentId": 6754055,
+        "name": "student 6754055",
+        "course": "MECS1029",
+        "year": 2018
+    },
+    {
+        "studentId": 8163140,
+        "name": "student 8163140",
+        "course": "MECS1029",
+        "year": 2018
+    },
+    {
+        "studentId": 8445959,
+        "name": "student 8445959",
+        "course": "MECS1024 ",
+        "year": 2018
+    },
+    {
+        "studentId": 3195377,
+        "name": "student 3195377",
+        "course": "MECS1023",
+        "year": 2022
+    },
+    {
+        "studentId": 5185873,
+        "name": "student 5185873",
+        "course": "MECS1032",
+        "year": 2017
+    },
+    {
+        "studentId": 9963481,
+        "name": "student 9963481",
+        "course": "MECS1028",
+        "year": 2024
+    },
+    {
+        "studentId": 7926149,
+        "name": "student 7926149",
+        "course": "MECS1033",
+        "year": 2016
+    },
+    {
+        "studentId": 3376213,
+        "name": "student 3376213",
+        "course": "MECS1023",
+        "year": 2019
+    },
+    {
+        "studentId": 4995746,
+        "name": "student 4995746",
+        "course": "MECS1032",
+        "year": 2022
+    },
+    {
+        "studentId": 4915430,
+        "name": "student 4915430",
+        "course": "MECS1025",
+        "year": 2019
+    },
+    {
+        "studentId": 6715087,
+        "name": "student 6715087",
+        "course": "MECS1026",
+        "year": 2015
+    },
+    {
+        "studentId": 6711304,
+        "name": "student 6711304",
+        "course": "MECS1026",
+        "year": 2022
+    },
+    {
+        "studentId": 6038147,
+        "name": "student 6038147",
+        "course": "MECS1032",
+        "year": 2015
+    },
+    {
+        "studentId": 2460100,
+        "name": "student 2460100",
+        "course": "MECS1029",
+        "year": 2019
+    },
+    {
+        "studentId": 9185002,
+        "name": "student 9185002",
+        "course": "MECS1033",
+        "year": 2023
+    },
+    {
+        "studentId": 8470885,
+        "name": "student 8470885",
+        "course": "MECS1033",
+        "year": 2021
+    },
+    {
+        "studentId": 2407673,
+        "name": "student 2407673",
+        "course": "MECS1023",
+        "year": 2019
+    },
+    {
+        "studentId": 7907757,
+        "name": "student 7907757",
+        "course": "MECS1026",
+        "year": 2020
+    },
+    {
+        "studentId": 5215400,
+        "name": "student 5215400",
+        "course": "MECS1033",
+        "year": 2015
+    },
+    {
+        "studentId": 5099678,
+        "name": "student 5099678",
+        "course": "MECS1023",
+        "year": 2022
+    },
+    {
+        "studentId": 7637056,
+        "name": "student 7637056",
+        "course": "MECS1026",
+        "year": 2017
+    },
+    {
+        "studentId": 4674178,
+        "name": "student 4674178",
+        "course": "MECS1033",
+        "year": 2021
+    },
+    {
+        "studentId": 3745899,
+        "name": "student 3745899",
+        "course": "MECS1024 ",
+        "year": 2020
+    },
+    {
+        "studentId": 3738538,
+        "name": "student 3738538",
+        "course": "MECS1030",
+        "year": 2018
+    },
+    {
+        "studentId": 9116682,
+        "name": "student 9116682",
+        "course": "MECS1030",
+        "year": 2022
+    },
+    {
+        "studentId": 3326515,
+        "name": "student 3326515",
+        "course": "MECS1024 ",
+        "year": 2018
+    },
+    {
+        "studentId": 3546906,
+        "name": "student 3546906",
+        "course": "MECS1023",
+        "year": 2017
+    },
+    {
+        "studentId": 1043378,
+        "name": "student 1043378",
+        "course": "MECS1028",
+        "year": 2015
+    },
+    {
+        "studentId": 6446189,
+        "name": "student 6446189",
+        "course": "MECS1024 ",
+        "year": 2019
+    },
+    {
+        "studentId": 8352565,
+        "name": "student 8352565",
+        "course": "MECS1032",
+        "year": 2024
+    },
+    {
+        "studentId": 4856957,
+        "name": "student 4856957",
+        "course": "MECS1025",
+        "year": 2024
+    },
+    {
+        "studentId": 5113812,
+        "name": "student 5113812",
+        "course": "MECS1024 ",
+        "year": 2021
+    },
+    {
+        "studentId": 6179852,
+        "name": "student 6179852",
+        "course": "MECS1030",
+        "year": 2016
+    },
+    {
+        "studentId": 9196113,
+        "name": "student 9196113",
+        "course": "MECS1033",
+        "year": 2023
+    },
+    {
+        "studentId": 3031254,
+        "name": "student 3031254",
+        "course": "MECS1026",
+        "year": 2020
+    },
+    {
+        "studentId": 3366132,
+        "name": "student 3366132",
+        "course": "MECS1026",
+        "year": 2015
+    },
+    {
+        "studentId": 3869217,
+        "name": "student 3869217",
+        "course": "MECS1025",
+        "year": 2024
+    },
+    {
+        "studentId": 1482296,
+        "name": "student 1482296",
+        "course": "MECS1023",
+        "year": 2019
+    },
+    {
+        "studentId": 8993618,
+        "name": "student 8993618",
+        "course": "MECS1025",
+        "year": 2022
+    },
+    {
+        "studentId": 2016588,
+        "name": "student 2016588",
+        "course": "MECS1028",
+        "year": 2021
+    },
+    {
+        "studentId": 1401268,
+        "name": "student 1401268",
+        "course": "MECS1029",
+        "year": 2018
+    },
+    {
+        "studentId": 4122179,
+        "name": "student 4122179",
+        "course": "MECS1025",
+        "year": 2022
+    },
+    {
+        "studentId": 9574032,
+        "name": "student 9574032",
+        "course": "MECS1030",
+        "year": 2017
+    },
+    {
+        "studentId": 1994595,
+        "name": "student 1994595",
+        "course": "MECS1033",
+        "year": 2024
+    },
+    {
+        "studentId": 5215259,
+        "name": "student 5215259",
+        "course": "MECS1029",
+        "year": 2024
+    },
+    {
+        "studentId": 1632224,
+        "name": "student 1632224",
+        "course": "MECS1024 ",
+        "year": 2021
+    },
+    {
+        "studentId": 7560247,
+        "name": "student 7560247",
+        "course": "MECS1032",
+        "year": 2020
+    },
+    {
+        "studentId": 4525469,
+        "name": "student 4525469",
+        "course": "MECS1025",
+        "year": 2024
+    },
+    {
+        "studentId": 1904558,
+        "name": "student 1904558",
+        "course": "MECS1026",
+        "year": 2024
+    },
+    {
+        "studentId": 3026908,
+        "name": "student 3026908",
+        "course": "MECS1024 ",
+        "year": 2016
+    },
+    {
+        "studentId": 7913799,
+        "name": "student 7913799",
+        "course": "MECS1033",
+        "year": 2018
+    },
+    {
+        "studentId": 8019378,
+        "name": "student 8019378",
+        "course": "MECS1032",
+        "year": 2019
+    },
+    {
+        "studentId": 1115313,
+        "name": "student 1115313",
+        "course": "MECS1028",
+        "year": 2019
+    },
+    {
+        "studentId": 2859018,
+        "name": "student 2859018",
+        "course": "MECS1025",
+        "year": 2016
+    },
+    {
+        "studentId": 3101165,
+        "name": "student 3101165",
+        "course": "MECS1024 ",
+        "year": 2023
+    },
+    {
+        "studentId": 5112095,
+        "name": "student 5112095",
+        "course": "MECS1026",
+        "year": 2023
+    },
+    {
+        "studentId": 6847158,
+        "name": "student 6847158",
+        "course": "MECS1030",
+        "year": 2024
+    },
+    {
+        "studentId": 5738199,
+        "name": "student 5738199",
+        "course": "MECS1024 ",
+        "year": 2017
+    },
+    {
+        "studentId": 3354519,
+        "name": "student 3354519",
+        "course": "MECS1023",
+        "year": 2024
+    },
+    {
+        "studentId": 1739837,
+        "name": "student 1739837",
+        "course": "MECS1026",
+        "year": 2023
+    },
+    {
+        "studentId": 2091032,
+        "name": "student 2091032",
+        "course": "MECS1026",
+        "year": 2021
+    },
+    {
+        "studentId": 4182837,
+        "name": "student 4182837",
+        "course": "MECS1030",
+        "year": 2022
+    },
+    {
+        "studentId": 9615255,
+        "name": "student 9615255",
+        "course": "MECS1029",
+        "year": 2020
+    },
+    {
+        "studentId": 3810327,
+        "name": "student 3810327",
+        "course": "MECS1032",
+        "year": 2023
+    },
+    {
+        "studentId": 5969025,
+        "name": "student 5969025",
+        "course": "MECS1026",
+        "year": 2024
+    }
+]

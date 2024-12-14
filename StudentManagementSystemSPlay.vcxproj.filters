@@ -26,6 +26,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="student_data.json" />
+    <None Include="student_data10.json">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="student_data100.json">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="student_data1000.json">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="student_data10000.json">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
